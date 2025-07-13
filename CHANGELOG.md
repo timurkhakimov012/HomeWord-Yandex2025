@@ -1,3 +1,8 @@
+## 6 - 2025-07-13
+
+- host
+- chore: update CHANGELOG for release 5
+
 ## 5 - 2025-07-13
 
 - chore: update CHANGELOG for release 4
