@@ -1,3 +1,8 @@
+## 10 - 2025-07-13
+
+- 1234
+- chore: update CHANGELOG for release 9
+
 ## 9 - 2025-07-13
 
 
