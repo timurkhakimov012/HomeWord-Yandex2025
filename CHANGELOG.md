@@ -1,3 +1,8 @@
+## 13 - 2025-07-13
+
+- final3 pleac
+- chore: update CHANGELOG for release 12
+
 ## 12 - 2025-07-13
 
 - 333
