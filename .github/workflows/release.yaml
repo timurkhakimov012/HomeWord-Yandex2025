@@ -144,7 +144,7 @@ jobs:
 
       - name: Build & Push Docker images
         run: | 
-            echo $HOST
+            echo ${HOST}
             HOST=${REGISTRY_HOST}
             ID=${REGISTRY_ID}
             IMG=${HOST}/${ID}/app:${VERSION}
