@@ -150,7 +150,7 @@ jobs:
         run: | 
             echo ${HOST}
             HOST=${REGISTRY_HOST}
-            ID=${REGISTRY_ID}
+            ID=${secrets.REGISTRY_ID}
             IMG=${HOST}/${ID}/app:${VERSION}
             IMG_L=${HOST}/${ID}/app:${VERSION}_latest
 
