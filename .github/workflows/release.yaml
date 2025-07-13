@@ -146,19 +146,23 @@ jobs:
             echo "REGISTRY_HOST=$REGISTRY_HOST"
             echo "REGISTRY_ID=$REGISTRY_ID"
             echo "Constructed tag: ${REGISTRY_HOST}/${REGISTRY_ID}/app:${VERSION}"
-      - name: Build & Push Docker images
-        env: 
-            REGISTRY_ID: ${{secrets.REGISTRY_ID}}
-        run: | 
-            echo ${HOST}
-            HOST=${REGISTRY_HOST}
-            ID=${REGISTRY_ID}
-            IMG=cr.ru-central1.yandex/${ID}/app:${VERSION}
-            IMG_L=cr.ru-central1.yandex/${ID}/app:${VERSION}_latest
-            printf "https://${HOST}" | docker-credential-yc get
+      - name: Build, Login & Push Docker images
+        shell: bash
+        env:
+          ENDPOINT: cr.yandex            
+          REGISTRY_ID: ${{ secrets.REGISTRY_ID }}
+          VERSION:     ${{ env.VERSION }}
+        run: |
+          IMAGE=${ENDPOINT}/${REGISTRY_ID}/app:${VERSION}
+          IMAGE_L=${ENDPOINT}/${REGISTRY_ID}/app:${VERSION}_latest
 
-            docker build -t "$IMG" .
-            docker tag   "$IMG" "$IMG_L"
-            docker push  "$IMG"
-            docker push  "$IMG_L"
+          docker build -t "$IMAGE" .
+          docker tag   "$IMAGE" "$IMAGE_L"
+
+          # логинимся по правильному хосту
+          TOKEN=$(yc iam create-token)
+          echo "$TOKEN" | docker login "$ENDPOINT" -u oauth --password-stdin
+
+          docker push "$IMAGE"
+          docker push "$IMAGE_L"
 
