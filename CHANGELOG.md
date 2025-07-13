@@ -1,3 +1,8 @@
+## 8 - 2025-07-13
+
+- finnal
+- chore: update CHANGELOG for release 7
+
 ## 7 - 2025-07-13
 
 - fff
