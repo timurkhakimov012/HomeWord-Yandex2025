@@ -65,7 +65,7 @@ jobs:
 
       - name: Update CHANGELOG.md in main
         shell: bash
-        run: 
+        run: |
         
           git checkout main
           git pull --ff-only origin main
