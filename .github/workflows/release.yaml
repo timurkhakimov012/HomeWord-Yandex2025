@@ -155,10 +155,6 @@ jobs:
             ID=${REGISTRY_ID}
             IMG=${HOST}/${ID}/app:${VERSION}
             IMG_L=${HOST}/${ID}/app:${VERSION}_latest
-            echo "Logging in to $HOST"
-            TOKEN=$(yc iam create-token)
-            echo "$TOKEN" | docker login "$HOST" -u oauth --password-stdin
-            
             printf "https://${HOST}" | docker-credential-yc get
 
             docker build -t "$IMG" .
