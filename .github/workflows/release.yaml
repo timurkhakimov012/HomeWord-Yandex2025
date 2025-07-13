@@ -153,8 +153,8 @@ jobs:
             echo ${HOST}
             HOST=${REGISTRY_HOST}
             ID=${REGISTRY_ID}
-            IMG=${HOST}/${ID}/app:${VERSION}
-            IMG_L=${HOST}/${ID}/app:${VERSION}_latest
+            IMG=cr.ru-central1.yandex/${ID}/app:${VERSION}
+            IMG_L=cr.ru-central1.yandex/${ID}/app:${VERSION}_latest
             printf "https://${HOST}" | docker-credential-yc get
 
             docker build -t "$IMG" .
