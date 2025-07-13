@@ -147,7 +147,8 @@ jobs:
             echo "REGISTRY_ID=$REGISTRY_ID"
             echo "Constructed tag: ${REGISTRY_HOST}/${REGISTRY_ID}/app:${VERSION}"
       - name: Build & Push Docker images
-        env: REGISTRY_ID: ${{secrets.REGISTRY_ID}}
+        env: 
+            REGISTRY_ID: ${{secrets.REGISTRY_ID}}
         run: | 
             echo ${HOST}
             HOST=${REGISTRY_HOST}
