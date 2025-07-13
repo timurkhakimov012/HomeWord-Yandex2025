@@ -1,3 +1,8 @@
+## 7 - 2025-07-13
+
+- fff
+- chore: update CHANGELOG for release 6
+
 ## 6 - 2025-07-13
 
 - host
