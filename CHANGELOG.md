@@ -1,3 +1,7 @@
+## 20 - 2025-07-18
+
+- chore: update CHANGELOG for release 19
+
 ## 19 - 2025-07-13
 
 - final52
