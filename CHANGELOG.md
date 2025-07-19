@@ -1,3 +1,9 @@
+## 21 - 2025-07-19
+
+- Merge pull request #16 from timurkhakimov012/cross_pr_test
+- test commit
+- chore: update CHANGELOG for release 20
+
 ## 20 - 2025-07-18
 
 - chore: update CHANGELOG for release 19
